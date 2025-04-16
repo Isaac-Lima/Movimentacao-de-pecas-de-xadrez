@@ -1,30 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    // Movimento da Torre (5 casas para a direita)
-    // Utilizando a estrutura de repetição for
-    printf("Movimento da Torre (5 casas para a direita):\n");
-    for (int i = 0; i < 5; i++) {
-        printf("Direita\n");
-    }
+    int movimentosCavalo;
 
-    // Movimento do Bispo (5 casas na diagonal para cima e à direita)
-    // Utilizando a estrutura de repetição while
-    printf("\nMovimento do Bispo (5 casas na diagonal para cima e à direita):\n");
-    int j = 0;
-    while (j < 5) {
-        printf("Cima Direita\n");
-        j++;
-    }
+    // Entrada do número de movimentos em L do Cavalo
+    printf("Digite o número de movimentos em L para o Cavalo (2 para baixo e 1 para a esquerda): ");
+    scanf("%d", &movimentosCavalo);
 
-    // Movimento da Rainha (8 casas para a esquerda)
-    // Utilizando a estrutura de repetição do-while
-    printf("\nMovimento da Rainha (8 casas para a esquerda):\n");
-    int k = 0;
-    do {
+    printf("\nMovimento do Cavalo:\n");
+
+    // Loop externo com for (quantidade de movimentos)
+    for (int i = 0; i < movimentosCavalo; i++) {
+        // Loop interno com while (duas casas para baixo)
+        int j = 0;
+        while (j < 2) {
+            printf("Baixo\n");
+            j++;
+        }
+
+        // Depois do loop: uma casa para a esquerda
         printf("Esquerda\n");
-        k++;
-    } while (k < 8);
+    }
 
     return 0;
 }
